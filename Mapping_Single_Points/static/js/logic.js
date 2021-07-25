@@ -6,7 +6,7 @@ let map = L.map("mapid", {
   center: [
     34.0522, -118.2437
   ],
-  zoom: 14
+  zoom: 13
 });
 
 // Assign the variable map to the object L.map(). Instantiate the object with 'mapid'
@@ -31,7 +31,7 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 // Then Add our 'graymap' tile layer to the map.
 streets.addTo(map);
 
-// Assign the titleLayer() method to the variable 'streets'
+// Assign the titleLayer() method to the variable 
 // The URLS include an API URL with a reference to the accessToken, and the OpenStreetMap URL
 // Add the 'maxZoom' attribute and assign it to a value of 18
 // Add 'id' attribute and assign it 'mapbox.streets' which will show the streets on the map
