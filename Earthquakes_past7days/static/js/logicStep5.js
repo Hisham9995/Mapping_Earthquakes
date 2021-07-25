@@ -139,8 +139,3 @@ return div;
 };
 
 legend.addTo(map);
-//After we iterate through the magnitudes, we'll add the color and text to the div element using div.innerHTML +=
-//For each iteration, we'll add a color from the colors array by styling the background of an <i> tag with color options.
-//we'll add the interval between earthquake magnitudes for our colors with 
-//The following code: magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+").
-

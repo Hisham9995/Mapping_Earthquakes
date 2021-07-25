@@ -107,7 +107,7 @@ style: styleInfo,
 }).addTo(earthquakes);
 
 
-// Inside the d3.json() method, add the earthquake variable.
+// Inside the d3.json() method, add the airportData variable.
 // Inside the anonymous function(), add the data parameter, which references the airportData.
 // Pass this data to the L.geoJSON() layer and then it'll be added to the map with addTo(map).
 

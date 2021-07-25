@@ -54,7 +54,6 @@ function styleInfo(feature) {
 
 // This function determines the radius of the earthquake marker based on its magnitude.
 // Earthquakes with a magnitude of 0 will be plotted with a radius of 1.
-// If the magnitude is greater than 0, then the magnitude is multiplied by 4.
 function getRadius(magnitude) {
   if (magnitude === 0) {
     return 1;
@@ -68,14 +67,20 @@ L.geoJson(data, {
     console.log(data);
     return L.circleMarker(latlng);
   },
-  // We set the style for each circleMarker using our styleInfo function.
   style: styleInfo
   }).addTo(map);
 });
 
-// Inside the d3.json() method, add the  variable.
+// Inside the d3.json() method, add the variable.
 // Inside the anonymous function(), add the data parameter, which references the airportData.
 // Pass this data to the L.geoJSON() layer and then it'll be added to the map with addTo(map).
 
 // Then Add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+// Assign the titleLayer() method to the variable 'streets'
+// The URLS include an API URL with a reference to the accessToken, and the OpenStreetMap URL
+// Add the 'maxZoom' attribute and assign it to a value of 18
+// Add 'id' attribute and assign it 'mapbox.streets' which will show the streets on the map
+// Add the accessToken attribute and assign it to the value of the API_KEY
+// Call addTo() function with map object, 'map' on the greymap object tile layer. The addTo() will add the graymap object tile layer to the 'let map'
