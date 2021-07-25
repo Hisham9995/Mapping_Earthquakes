@@ -6,7 +6,7 @@ let map = L.map("mapid", {
   center: [
     34.0522, -118.2437
   ],
-  zoom: 14
+  zoom: 13
 });
 
 // Assign the variable map to the object L.map(). Instantiate the object with 'mapid'
