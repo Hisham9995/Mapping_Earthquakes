@@ -8,11 +8,25 @@ let map = L.map("mapid", {
   ],
   zoom: 4
 });
-
 // Assign the variable map to the object L.map(). Instantiate the object with 'mapid'
 // The 'mapid' will reference the 'id' tag in the <div> element
 // The setView() method sets the view of the map with a geographical center, 
 //     where the first coordinate is the latitude and the second is longitude. Set the zoom level to "4" (0-18)
+
+// Get data from cities.js
+let cityData = cities;
+
+
+// Loop through the cities array and create one marker for each city.
+cityData.forEach(function(city) {
+  console.log(city)
+  L.circleMarker(city.location, {
+    radius: city.population/100000
+  })
+  .bindPopup("<h2>" + city.city + ", " + city.state + "</h2> <hr> <h3>Population " + city.population.toLocaleString() + "</h3>")
+  .addTo(map);
+ });
+
 
 // Create the tile layer that will be the background of our map.
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -24,7 +38,7 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 // Then Add our 'graymap' tile layer to the map.
 streets.addTo(map);
 
-// Assign the titleLayer() method to the variable 'streets'
+// Assign the titleLayer() method to the variable 
 // The URLS include an API URL with a reference to the accessToken, and the OpenStreetMap URL
 // Add the 'maxZoom' attribute and assign it to a value of 18
 // Add 'id' attribute and assign it 'mapbox.streets' which will show the streets on the map
