@@ -23,22 +23,52 @@ let baseMaps = {
 
 // Create the map object with center, zoom level and default layer.
 let map = L.map('mapid', {
-  center: [43.7, -79.3],
-  zoom: 11,
-  layers: [satelliteStreets]
-})
+  center: [39.5, -98.5],
+  zoom: 3,
+  layers: [streets]
+});
 
 // Pass our map layers into our layers control and add the layers control to the map.
 L.control.layers(baseMaps).addTo(map);
 
-// Accessing the Toronto neighborhoods GeoJSON URL
-let torontoHoods = "https://raw.githubusercontent.com/caseychen3605/Mapping_Earthquakes/main/torontoNeighborhoods.json";
+// Accessing the Earthquake GeoJSON URL
+let earthquakeData = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson";
 
-// Grabbing our GeoJSON data.
-d3.json(torontoHoods).then(function(data) {
+// Grabbing the GeoJSON data.
+d3.json(earthquakeData).then(function(data) {
   console.log(data);
+
+// This function returns the style data for each of the earthquakes we plot on the map. 
+// We pass the magnitude of the earthquake into a function to calculate the radius.
+function styleInfo(feature) {
+  return {
+    opacity: 1,
+    fillOpacity: 1,
+    fillColor: "#ffae42",
+    color: "#000000",
+    radius: getRadius(),
+    stroke: true,
+    weight: 0.5
+  };
+}
+
+// This function determines the radius of the earthquake marker based on its magnitude.
+// Earthquakes with a magnitude of 0 will be plotted with a radius of 1.
+function getRadius(magnitude) {
+  if (magnitude === 0) {
+    return 1;
+  }
+  return magnitude * 4;
+}
+
 // Creating a GeoJSON layer with the retrieved data.
-L.geoJson(data).addTo(map);
+L.geoJson(data, {
+  pointToLayer: function(feature, latlng) {
+    console.log(data);
+    return L.circleMarker(latlng);
+  },
+  style: styleInfo
+  }).addTo(map);
 });
 
 // Inside the d3.json() method, add the variable.
@@ -47,3 +77,10 @@ L.geoJson(data).addTo(map);
 
 // Then Add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+// Assign the titleLayer() method to the variable 'streets'
+// The URLS include an API URL with a reference to the accessToken, and the OpenStreetMap URL
+// Add the 'maxZoom' attribute and assign it to a value of 18
+// Add 'id' attribute and assign it 'mapbox.streets' which will show the streets on the map
+// Add the accessToken attribute and assign it to the value of the API_KEY
+// Call addTo() function with map object, 'map' on the greymap object tile layer. The addTo() will add the graymap object tile layer to the 'let map'
