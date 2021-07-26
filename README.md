@@ -12,7 +12,7 @@ The purpose of this repository is to view the differences Between maps and to ch
 
 
 
-2.The Second one  major Earthquakes is specified with a green circle with a magnitude greater than 4.5 and it has  a select-option to display or no-display, 
+2.The Second one  major Earthquakes is specified with a green circle with a magnitude greater than 4.5 and   a select-option to display or no-display, 
 
 
 
