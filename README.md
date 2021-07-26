@@ -24,7 +24,7 @@ I did use D3.json  Retrieve the earthquake GeoJSON data and function to determi
 
 
 
-__This analysis helps to display the cities most likely to be struck by an earthquake to take precautions in such as Infrastructure__
+__This analysis helps to display the cities most likely to be struck by an earthquake to take precautions in such as Infrastructure__ .
 
 
 
