@@ -9,7 +9,13 @@ An interactive map of earthquakes
 The purpose of this repository is to view the differences Between maps and to change the color based on the magnitude, The magnitude is expressed in whole numbers and decimal fractions.
 
 1.The first to detect tectonic plates location, 
+
+
+
 2.The Second one  major Earthquakes is specified with a green circle with a magnitude greater than 4.5 and it has  a select-option to display or no-display, 
+
+
+
 3.the third one for displaying Earthquakes
 
 I have created 4 layers that will be the background of our map  which are  Streets, Satellite, Dark and  light
