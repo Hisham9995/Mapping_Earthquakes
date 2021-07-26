@@ -24,7 +24,7 @@ I did use D3.json  Retrieve the earthquake GeoJSON data and function to determi
 
 
 
-__This analysis helps to display the cities most likely to be struck by an earthquake to take precautions in such as (Infrastructure) Implement new technologies for reinforcing new construction. -Build roads, bridges, and buildings near hills and fault lines Erect buildings close together using minimal construction materials to reduce the damage and Kepp people Safe __ .
+__This analysis helps to display the cities most likely to be struck by an earthquake to take precautions in such as (Infrastructure) Implement new technologies for reinforcing new construction. -Build roads, bridges, and buildings near hills and fault lines Erect buildings close together using minimal construction materials to reduce the damage and Kepp people Safe__ .
 
 
 
